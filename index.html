@@ -49,7 +49,7 @@
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); color: var(--accent); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
     .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(3.2rem, 7vw, 6rem); font-weight: 700; line-height: 1.05; color: var(--white); margin-bottom: 0.5rem; }
+    .hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; color: var(--white); margin-bottom: 0.5rem; white-space: nowrap; }
     .hero-name .highlight { color: var(--accent); }
     .hero-typed { font-size: 1.1rem; color: var(--accent2); font-weight: 500; margin-bottom: 1.5rem; min-height: 1.8rem; }
     .cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--accent2); margin-left: 2px; animation: blink 1s infinite; vertical-align: text-bottom; }
@@ -61,8 +61,8 @@
     .btn-outline { border: 1px solid var(--border); color: var(--text); padding: 0.8rem 2rem; border-radius: 0.4rem; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
     .hero-social { display: flex; gap: 1rem; }
-    .hero-social a { color: var(--muted); font-size: 1.1rem; transition: color 0.2s; }
-    .hero-social a:hover { color: var(--accent); }
+    .hero-social a { color: var(--muted); font-size: 1.4rem; transition: all 0.2s; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 0.6rem; background: var(--card); }
+    .hero-social a:hover { color: #fff; background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
 
     /* PROFILE PHOTO */
     .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
@@ -90,7 +90,13 @@
     /* ABOUT - full focused section */
     .about-content { max-width: 900px; }
     .about-content p { color: var(--muted); font-size: 1.02rem; line-height: 2; margin-bottom: 1.4rem; }
-    .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; margin-bottom: 2.5rem; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; margin-bottom: 2rem; }
+    .about-highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 0.5rem; }
+    .about-highlight { background: var(--card); border: 1px solid var(--border); border-radius: 0.8rem; padding: 1.4rem 1.6rem; display: flex; align-items: center; gap: 1.2rem; transition: border-color 0.2s; }
+    .about-highlight:hover { border-color: var(--accent2); }
+    .about-highlight i { font-size: 1.8rem; color: var(--accent2); flex-shrink: 0; }
+    .highlight-num { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); }
+    .highlight-lbl { color: var(--muted); font-size: 0.8rem; margin-top: 0.2rem; line-height: 1.5; }
     .tag { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); color: var(--accent); padding: 0.35rem 0.9rem; border-radius: 2rem; font-size: 0.78rem; font-weight: 500; }
     .about-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
     .about-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0.6rem; padding: 1.2rem 1.5rem; }
@@ -164,6 +170,14 @@
     .lead-pts li { color: var(--muted); font-size: 0.83rem; padding: 0.2rem 0 0.2rem 1.1rem; position: relative; }
     .lead-pts li::before { content: '▸'; position: absolute; left: 0; color: var(--accent2); font-size: 0.7rem; top: 0.3rem; }
 
+    /* CERTIFICATIONS */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+    .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 0.8rem; padding: 1.5rem 1.7rem; display: flex; align-items: flex-start; gap: 1rem; transition: border-color 0.2s, transform 0.2s; }
+    .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .cert-icon { font-size: 1.5rem; color: var(--accent); flex-shrink: 0; margin-top: 0.2rem; }
+    .cert-title { font-weight: 700; color: var(--white); font-size: 0.9rem; margin-bottom: 0.3rem; line-height: 1.4; }
+    .cert-org { color: var(--muted); font-size: 0.8rem; }
+
     /* MEMBERSHIPS */
     .mem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem; }
     .mem-card { background: var(--card); border: 1px solid var(--border); border-radius: 0.8rem; padding: 1.6rem 1.8rem; display: flex; align-items: flex-start; gap: 1.2rem; transition: border-color 0.2s; }
@@ -233,9 +247,9 @@
   <div class="hero-bg"></div>
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="hero-eyebrow">Mechanical Engineer '27 · UET Peshawar</div>
-      <h1 class="hero-name">Ibrahim<br><span class="highlight">Gul</span></h1>
-      <div class="hero-typed"><span id="typed"></span><span class="cursor"></span></div>
+      <div class="hero-eyebrow">ME'27 UET Peshawar</div>
+      <h1 class="hero-name">Ibrahim <span class="highlight">Gul</span></h1>
+      <div class="hero-typed"><span id="prefix">I am a </span><span id="typed"></span><span class="cursor"></span></div>
       <p class="hero-desc">Mechanical Engineering student with hands-on experience in CAD modeling, aircraft maintenance, and engineering design. CSWA Certified by Dassault Systèmes, with a focused interest in aerospace systems and a growing portfolio of independently completed CAD projects.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn-primary"><i class="fas fa-eye"></i> View My Work</a>
@@ -252,7 +266,7 @@
       <div class="hero-stats-col">
         <div class="stat-box">
           <div class="stat-val"><span class="c1">3.23</span></div>
-          <div class="stat-lbl">GPA · UET Peshawar</div>
+          <div class="stat-lbl">CGPA · UET Peshawar</div>
         </div>
         <div class="stat-box">
           <div class="stat-val" style="font-size:1.1rem;"><span class="c2">CSWA Certified</span></div>
@@ -285,6 +299,23 @@
       <span class="tag">FEA Simulation</span>
       <span class="tag">Aerospace Enthusiast</span>
       <span class="tag">Future Researcher</span>
+    </div>
+
+    <div class="about-highlight-grid">
+      <div class="about-highlight">
+        <i class="fa-solid fa-cubes" style="color:#3b82f6"></i>
+        <div>
+          <div class="highlight-num">70+</div>
+          <div class="highlight-lbl">Projects Completed</div>
+        </div>
+      </div>
+      <div class="about-highlight">
+        <i class="fa-solid fa-microphone-lines" style="color:#f59e0b"></i>
+        <div>
+          <div class="highlight-num">Best Presenter</div>
+          <div class="highlight-lbl">Recognized for Best Presentation Skills in Entire Batch</div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -403,19 +434,19 @@
     <div class="sec-eyebrow" style="margin-bottom:1.5rem">Personal Information</div>
     <div class="about-info-grid">
       <div class="about-card">
-        <h4><i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:0.5rem"></i>Location</h4>
+        <h4><i class="fas fa-map-marker-alt" style="color:#ef4444;margin-right:0.5rem"></i>Location</h4>
         <p>Kamra Air Base, Pakistan</p>
       </div>
       <div class="about-card">
-        <h4><i class="fas fa-envelope" style="color:var(--accent);margin-right:0.5rem"></i>Email</h4>
+        <h4><i class="fas fa-envelope" style="color:#3b82f6;margin-right:0.5rem"></i>Email</h4>
         <p>ibrahimgul5314@gmail.com</p>
       </div>
       <div class="about-card">
-        <h4><i class="fas fa-graduation-cap" style="color:var(--accent);margin-right:0.5rem"></i>Education</h4>
+        <h4><i class="fas fa-graduation-cap" style="color:#10b981;margin-right:0.5rem"></i>Education</h4>
         <p>B.E. Mechanical Engineering · UET Peshawar · 2023–2027</p>
       </div>
       <div class="about-card">
-        <h4><i class="fas fa-language" style="color:var(--accent);margin-right:0.5rem"></i>Languages</h4>
+        <h4><i class="fas fa-language" style="color:#8b5cf6;margin-right:0.5rem"></i>Languages</h4>
         <p>English (Proficient) · Urdu (Native)</p>
       </div>
     </div>
@@ -480,8 +511,62 @@
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="sec-alt">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Professional Development</div>
+    <div class="sec-title">Certifications</div>
+    <div class="sec-line"></div>
+  </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <i class="fa-solid fa-cube cert-icon" style="color:#3b82f6"></i>
+        <div>
+          <div class="cert-title">SOLIDWORKS CAD Associate (CSWA)</div>
+          <div class="cert-org">Dassault Systèmes · SOLIDWORKS Learning Program 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <i class="fa-solid fa-wave-square cert-icon" style="color:#06b6d4"></i>
+        <div>
+          <div class="cert-title">SOLIDWORKS Simulation Associate (CSWSA)</div>
+          <div class="cert-org">Dassault Systèmes · SOLIDWORKS Learning Program 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <i class="fa-solid fa-shapes cert-icon" style="color:#10b981"></i>
+        <div>
+          <div class="cert-title">SOLIDWORKS 3D Creator Associate</div>
+          <div class="cert-org">Dassault Systèmes · SOLIDWORKS Learning Program 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <i class="fa-solid fa-layer-group cert-icon" style="color:#f59e0b"></i>
+        <div>
+          <div class="cert-title">SOLIDWORKS Additive Manufacturing Associate</div>
+          <div class="cert-org">Dassault Systèmes · SOLIDWORKS Learning Program 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <i class="fa-solid fa-diagram-project cert-icon" style="color:#ec4899"></i>
+        <div>
+          <div class="cert-title">Google Project Management Professional Certificate</div>
+          <div class="cert-org">Coursera</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <i class="fa-solid fa-language cert-icon" style="color:#8b5cf6"></i>
+        <div>
+          <div class="cert-title">IELTS Listening and Speaking Sections Skills Mastery</div>
+          <div class="cert-org">University of California, Irvine · Coursera</div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
 <!-- PROJECTS -->
-<section id="projects" class="sec-alt">
+<section id="projects">
   <div class="sec-header">
     <div class="sec-eyebrow">CAD & Engineering Work</div>
     <div class="sec-title">Featured Projects</div>
@@ -601,12 +686,14 @@
 </footer>
 
 <script>
-  const phrases = ["SOLIDWORKS CAD Designer", "PTC Creo Modeler", "Aircraft Maintenance Trainee", "CSWA Certified", "Aerospace Enthusiast"];
+  const phrases = ["Mechanical Engineering Student", "SOLIDWORKS and Creo Parametric Designer", "CSWA Certified Associate", "Aerospace Enthusiast"];
   let i = 0, j = 0, del = false;
   const el = document.getElementById('typed');
+  const prefixEl = document.getElementById('prefix');
   function type() {
     const cur = phrases[i];
     el.textContent = del ? cur.substring(0, j--) : cur.substring(0, j++);
+    prefixEl.textContent = /^[AEIOU]/.test(cur) ? "I am an " : "I am a ";
     if (!del && j > cur.length) { del = true; setTimeout(type, 1200); return; }
     if (del && j < 0) { del = false; i = (i+1) % phrases.length; }
     setTimeout(type, del ? 50 : 80);
